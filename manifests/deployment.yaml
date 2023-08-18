@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pythoapp
+  labels:
+    app: pythoapp
+  namespace: namespace-workflow-1692317075869
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pythoapp
+  template:
+    metadata:
+      labels:
+        app: pythoapp
+    spec:
+      containers:
+        - name: pythoapp
+          image: azaksacr1.azurecr.io/image-workflow-1692317075869:latest
+          ports:
+            - containerPort: 8000
