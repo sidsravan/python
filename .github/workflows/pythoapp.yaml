@@ -2,14 +2,14 @@ name: pythoapp
 "on":
     push:
         branches:
-            - main
+            - aks-devhub-dlsww
     workflow_dispatch: {}
 env:
     ACR_RESOURCE_GROUP: AKS-RG
     AZURE_CONTAINER_REGISTRY: AZAKSACR1
     CLUSTER_NAME: AKSCLUSTER1
     CLUSTER_RESOURCE_GROUP: AKS-RG
-    CONTAINER_NAME: image-workflow-1692317075869
+    CONTAINER_NAME: image-workflow-1692317808077
     DEPLOYMENT_MANIFEST_PATH: |
         manifests/deployment.yaml
         manifests/service.yaml
@@ -62,4 +62,4 @@ jobs:
                 action: deploy
                 images: ${{ env.AZURE_CONTAINER_REGISTRY }}.azurecr.io/${{ env.CONTAINER_NAME }}:${{ github.sha }}
                 manifests: ${{ env.DEPLOYMENT_MANIFEST_PATH }}
-                namespace: namespace-workflow-1692317075869
+                namespace: dev
