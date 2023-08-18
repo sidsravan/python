@@ -4,7 +4,7 @@ metadata:
   name: pythoapp
   labels:
     app: pythoapp
-  namespace: namespace-workflow-1692317075869
+  namespace: dev
 spec:
   replicas: 1
   selector:
@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: pythoapp
-          image: azaksacr1.azurecr.io/image-workflow-1692317075869:latest
+          image: azaksacr1.azurecr.io/image-workflow-1692317808077:latest
           ports:
             - containerPort: 8000
